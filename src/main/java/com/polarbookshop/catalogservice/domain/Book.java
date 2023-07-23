@@ -35,6 +35,7 @@ public record Book (
     )
     Double price,
 
+    @NotNull(message = "The book publisher must be defined.")
     String publisher,
 
     @CreatedDate
