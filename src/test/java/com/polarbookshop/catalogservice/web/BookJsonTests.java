@@ -27,6 +27,10 @@ class BookJsonTests {
             .isEqualTo(book.author());
         assertThat(jsonContent).extractingJsonPathNumberValue("@.price")
             .isEqualTo(book.price());
+        assertThat(jsonContent).extractingJsonPathNumberValue("@.createdDate")
+            .isEqualTo(book.createdDate());
+        assertThat(jsonContent).extractingJsonPathNumberValue("@.lastModifiedDate")
+            .isEqualTo(book.lastModifiedDate());
         assertThat(jsonContent).extractingJsonPathNumberValue("@.version")
             .isEqualTo(book.version());
     }
