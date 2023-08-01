@@ -20,10 +20,11 @@ public class SecurityConfig {
             .authorizeHttpRequests(authorize -> authorize
                 .mvcMatchers(HttpMethod.GET, "/", "/books/**")
                 .permitAll()
-                .anyRequest().authenticated()
+                .anyRequest().hasRole("employee")
             )
             .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
-            .sessionManagement(sessionManagement -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .sessionManagement(sessionManagement -> sessionManagement
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .csrf(AbstractHttpConfigurer::disable)
             .build();
     }
