@@ -83,7 +83,7 @@ class BookRepositoryJdbcTests {
         var bookToCreate = Book.of("1232343456", "Title", "Author", 12.90, "Polarsophia");
         var createdBook = bookRepository.save(bookToCreate);
 
-        assertThat(createdBook.createdBy()).isNull();
+        assertThat(createdBook.createdBy()).isEqualTo("unknown");
         assertThat(createdBook.lastModifiedBy()).isNull();
     }
 
