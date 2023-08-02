@@ -67,7 +67,7 @@ public record Book(
             publisher,
             null,
             null,
-            null,
+            "unknown",
             null,
             0
         );
