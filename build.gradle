@@ -39,6 +39,7 @@ dependencies {
 	testImplementation "com.github.dasniko:testcontainers-keycloak:${testKeycloakVersion}"
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	runtimeOnly 'org.postgresql:postgresql'
+	runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
 }
 
 dependencyManagement {
