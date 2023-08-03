@@ -48,5 +48,8 @@ management:
       show-components: always
       probes:
         enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 polar:
   greeting: Welcome to the local book catalog!
